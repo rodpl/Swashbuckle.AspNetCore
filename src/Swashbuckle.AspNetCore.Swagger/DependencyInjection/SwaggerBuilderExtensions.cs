@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Routing;
 
-#if (!NETSTANDARD2_0)
+#if (!NETSTANDARD2_0 && !NET462)
 using Microsoft.AspNetCore.Routing.Patterns;
 #endif
 
@@ -39,7 +39,7 @@ namespace Microsoft.AspNetCore.Builder
             return app.UseSwagger(options);
         }
 
-#if (!NETSTANDARD2_0)
+#if (!NETSTANDARD2_0 && !NET462)
         public static IEndpointRouteBuilder MapSwagger(
             this IEndpointRouteBuilder endpoints,
             string pattern = "/swagger/{documentName}/swagger.{json|yaml}",

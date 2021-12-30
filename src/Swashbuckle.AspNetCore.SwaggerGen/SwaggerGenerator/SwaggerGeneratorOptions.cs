@@ -71,7 +71,7 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
             // endpoint name if no route name is available. This allows us to
             // generate operation IDs for endpoints that are defined using
             // minimal APIs.
-#if (!NETSTANDARD2_0)
+#if (!NETSTANDARD2_0 && !NET462)
             return
                 actionDescriptor.AttributeRouteInfo?.Name
                 ?? (actionDescriptor.EndpointMetadata?.LastOrDefault(m => m is IEndpointNameMetadata) as IEndpointNameMetadata)?.EndpointName;

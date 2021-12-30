@@ -38,7 +38,7 @@ namespace Swashbuckle.AspNetCore.SwaggerGen
 
             // For non-controllers, prefer the IsRequired flag if we're not on netstandard 2.0, otherwise fallback to the default logic.
             return
-#if !NETSTANDARD2_0
+#if !NETSTANDARD2_0 && !NET462
             apiParameter.IsRequired;
 #else
             IsRequired();

@@ -17,7 +17,7 @@ namespace Swashbuckle.AspNetCore.Cli
     {
         internal static IServiceProvider GetServiceProvider(Assembly assembly)
         {
-#if NETCOREAPP2_1
+#if NETCOREAPP2_1 || NET462
             return null;
 #else
             // We're disabling the default server and the console host lifetime. This will disable:

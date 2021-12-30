@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.AspNetCore.Http.Extensions;
 using System.Linq;
 
-#if NETSTANDARD2_0
+#if NETSTANDARD2_0 || NET462
 using IWebHostEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 #endif
 
